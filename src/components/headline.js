@@ -27,8 +27,8 @@ const Headline = () => {
   return (
     <React.Fragment>
       <h1 className="mb1">
-        Max Smouha is a developer who{' '}
-        <span id="headline">{randomHeadline()}</span> .
+        Max Smouha is a developer who
+        <span id="headline">{randomHeadline()}</span>.
       </h1>
     </React.Fragment>
   );
