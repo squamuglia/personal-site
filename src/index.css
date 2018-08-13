@@ -1,5 +1,94 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@import './lib/reset.css';
+@import './lib/borders.css';
+@import './lib/display.css';
+@import './lib/positioning.css';
+@import './lib/flexbox.css';
+@import './lib/align.css';
+@import './lib/spacing.css';
+@import './lib/buttons.css';
+@import './lib/forms.css';
+@import './lib/lists.css';
+@import './lib/typography.css';
+@import './lib/z-index.css';
+
+/* Containers */
+  .gutter { max-width: 60rem; margin:0 auto; }
+
+/* Breakpoints */
+@media (max-width: 30em){
+  .xs-hide{ display:none !important }
+  h1, .h1 { font-size: 2.5rem  }
+  .mobile-button { position: fixed;  }
 }
+
+@media (min-width: 40em) and (max-width: 52em){
+  .sm-hide{ display:none !important }
+  .mobile-button { position: fixed;  }
+}
+
+@media (min-width: 52em) and (max-width: 64em){
+  .md-hide{ display:none !important }
+}
+
+@media (min-width: 64em){
+  .lg-hide{ display:none !important }
+}
+
+/*Colors*/ 
+  .bg-white { background: #fff }
+
+  .bg-light { background: #dfdfdf }
+
+  .white { color: #fff }
+
+  .o-4 { opacity: 0.4 }
+
+  a:hover {
+    opacity: .5;
+    color: #000;
+    transition: .2s;
+}
+
+/*Animation*/
+#stripe {
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+  }
+  
+  @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
