@@ -25,12 +25,12 @@ nextRando();
 
 const Headline = () => {
   return (
-    <React.Fragment>
+    <div className="__headline">
       <h1 className="mb1">
-        Max Smouha is a developer who
+        Max Smouha is a developer who{' '}
         <span id="headline">{randomHeadline()}</span>.
       </h1>
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -27,11 +27,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div
-          id="stripe"
-          className="App fill abs m1"
-          onMouseMove={this.hoverColor}
-        />
+        <div id="stripe" className="App left right yview abs" />
+        <div className="fill noise abs border" onMouseMove={this.hoverColor} />
         <div className="aic jcc f fw p1 yview">
           <div className="gutter p2 fa ac o-4 white">
             <Headline />

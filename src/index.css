@@ -13,12 +13,16 @@
 
 /* Containers */
   .gutter { max-width: 60rem; margin:0 auto; }
+  .noise { background: url('/noise.png'); opacity: 0.7; }
+  .__headline { min-height: 15rem }
 
 /* Breakpoints */
 @media (max-width: 30em){
   .xs-hide{ display:none !important }
   h1, .h1 { font-size: 2.5rem  }
   .mobile-button { position: fixed;  }
+  .__headline { min-height: 24rem }
+  .gutter { max-width: 60rem; margin:6rem auto 0 auto; }
 }
 
 @media (min-width: 40em) and (max-width: 52em){
