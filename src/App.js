@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div id="stripe" className="App left right yview abs" />
-        <div className="fill noise abs border" onMouseMove={this.hoverColor} />
+        <div className="vw vh noise abs border" onMouseMove={this.hoverColor} />
         <div className="aic jcc f fw p1 yview">
           <div className="gutter p2 fa ac o-4 white">
             <Headline />
@@ -60,7 +60,7 @@ class App extends Component {
                 Shreddit
               </a>
             </div>
-            <div className="x left ac mt1 mb2">
+            <div className="x left ac my1">
               <a href="mailto:maxsmouha@gmail.com">email</a>{' '}
               <a href="https://github.com/squamgulia">git</a>{' '}
               <a href="https://medium.com/@maxsmouha/">medium</a>
