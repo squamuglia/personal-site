@@ -2,14 +2,15 @@ import React from 'react';
 
 const headlines = [
   'is afraid of horses',
-  'loves fava beans',
+  'loves a good lentil',
   `isn't afraid to say we met on tinder`,
-  'speaks softly and carries a big shtick',
   'so random',
   'finagles',
   'does the madison',
   'understands eggs',
-  'lives at 182 Kosciuszko get at me'
+  "loves the word 'externality'",
+  'knows a guy who knows a guy',
+  'can even'
 ];
 
 const randomHeadline = () =>

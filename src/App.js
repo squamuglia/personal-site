@@ -36,31 +36,31 @@ class App extends Component {
               <p className="h6 kern">RECENT PROJECTS</p>
             </div>
             <div className="mt1">
-              <a href="https://freud.fun" className="no-underwear">
+              <a href="http://freud.fun" className="no-underwear">
                 Fridge Freud
               </a>{' '}
               —
-              <a className="no-underwear" href="https://monstermash.cool">
+              <a className="no-underwear" href="http://mmash.herokuapp.com/">
                 {' '}
                 Monster Mash
               </a>{' '}
               —
-              <a className="no-underwear" href="https://pianofriend.cool">
+              <a className="no-underwear" href="http://pianofriend.cool">
                 {' '}
                 Piano Friend
               </a>{' '}
               —
-              <a className="no-underwear" href="https://beer.topset.co">
+              <a className="no-underwear" href="http://beer.topset.co">
                 {' '}
                 WeWork Beer List
               </a>{' '}
               —
-              <a className="no-underwear" href="https://shreddit.cool">
+              <a className="no-underwear" href="http://www.shreddit.cool">
                 {' '}
                 Shreddit
               </a>
             </div>
-            <div className="x abs bottom left ac mb2">
+            <div className="x left ac mt1 mb2">
               <a href="mailto:maxsmouha@gmail.com">email</a>{' '}
               <a href="https://github.com/squamgulia">git</a>{' '}
               <a href="https://medium.com/@maxsmouha/">medium</a>
