@@ -1,35 +1,31 @@
 import React from 'react';
 
 const headlines = [
-  'is afraid of horses',
-  'loves a good lentil',
-  `isn't afraid to say we met on tinder`,
-  'so random',
-  'finagles',
-  'does the madison',
-  'understands eggs',
-  "loves the word 'externality'",
-  'knows a guy who knows a guy',
-  'can even'
+  'who is afraid of horses.',
+  'who loves a good lentil.',
+  `who isn't afraid to say we met on tinder.`,
+  'who so random.',
+  'who finagles.',
+  'who does the madison.',
+  'who understands eggs.',
+  "who loves the word 'externality'.",
+  'who knows a guy who knows a guy.',
+  'who can even.'
 ];
 
-const randomHeadline = () =>
-  headlines[Math.floor(Math.random() * headlines.length)];
-
-const nextRando = () => {
-  setInterval(
-    () => (document.getElementById('headline').innerHTML = randomHeadline()),
-    2000
-  );
+const nextHeadline = () => {
+  let i = 0;
+  setInterval(() => {
+    i < headlines.length ? (i = i + 1) : (i = 0);
+    document.getElementById('headline').innerHTML == headlines[i];
+  }, 2000);
 };
-nextRando();
 
 const Headline = () => {
   return (
     <div className="__headline">
       <h1 className="mb1">
-        Max Smouha is a developer who{' '}
-        <span id="headline">{randomHeadline()}</span>.
+        Max Smouha is a developer <span id="headline">{nextHeadline()}</span>
       </h1>
     </div>
   );
