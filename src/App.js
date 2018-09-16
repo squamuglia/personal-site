@@ -58,9 +58,37 @@ class App extends Component {
               <a className="no-underwear" href="http://www.shreddit.cool">
                 {' '}
                 Shreddit
+              </a>{' '}
+              —
+              <a className="no-underwear" href="https://justadd.myshopify.com/">
+                {' '}
+                Just Add Sauces
+              </a>{' '}
+              —
+              <a className="no-underwear" href="http://uchu.nyc/">
+                {' '}
+                Uchu
+              </a>{' '}
+              —
+              <a className="no-underwear" href="http://sushionjones.com/">
+                {' '}
+                Sushi on Jones
+              </a>{' '}
+              —
+              <a className="no-underwear" href="http://serhantteam.com/">
+                {' '}
+                Serhant Team
+              </a>
+              ' '} —
+              <a
+                className="no-underwear"
+                href="https://squamuglia.github.io/neteffect/"
+              >
+                {' '}
+                Net Effective Rent
               </a>
             </div>
-            <div className="x left ac my1">
+            <div className="x left ac mt1 mb2">
               <a href="mailto:maxsmouha@gmail.com">email</a>{' '}
               <a href="https://github.com/squamgulia">git</a>{' '}
               <a href="https://medium.com/@maxsmouha/">medium</a>

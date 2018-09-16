@@ -17,7 +17,7 @@ const nextHeadline = () => {
   let i = 0;
   setInterval(() => {
     i < headlines.length ? (i = i + 1) : (i = 0);
-    document.getElementById('headline').innerHTML == headlines[i];
+    document.getElementById('headline').innerHTML = headlines[i];
   }, 2000);
 };
 
