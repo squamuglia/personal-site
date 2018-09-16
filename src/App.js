@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Headline from './components/headline';
+import About from './components/about';
 
 class App extends Component {
+  state = {
+    aboutToggle: false
+  };
+
   hoverColor = e => {
     let mouseX;
     let mouseY;
@@ -14,75 +19,145 @@ class App extends Component {
     console.log('x', mouseX / x, 'y', mouseY / y);
 
     stripe.style.background = `linear-gradient(130deg, rgb(${(250 * mouseX) /
-      x},${(250 * mouseY) / y},250), rgb(${(250 * mouseY) / y},250,${(250 * x) /
+      x},${(250 * mouseY) / y},200), rgb(${(250 * mouseY) / y},120,${(250 * x) /
       mouseX})), linear-gradient(210deg, rgb(${(250 * mouseX) / x},${(250 *
       mouseY) /
-      y},${(250 * mouseX) / x}), rgb(250,${(250 * mouseY) / y},${(250 *
+      y},${(250 * mouseX) / x}), rgb(160,${(250 * mouseY) / y},${(250 *
       mouseX) /
       x})),
-  linear-gradient(330deg, rgb(200,${(250 * y) / mouseY},${(250 * mouseX) /
-      x}), rgb(250,${(250 * mouseY) / y},${(250 * mouseX) / x}))`;
+  linear-gradient(330deg, rgb(80,${(250 * y) / mouseY},${(250 * mouseX) /
+      x}), rgb(100,${(250 * mouseY) / y},${(250 * mouseX) / x}))`;
   };
 
+  openAbout = () => {
+    this.setState(
+      {
+        aboutToggle: !this.state.aboutToggle
+      },
+      () => console.log(this.state.aboutToggle)
+    );
+  };
+
+  showAbout = show => {
+    if (show) {
+      return 'X';
+    } else {
+      return 'About';
+    }
+  };
   render() {
     return (
       <React.Fragment>
         <div id="stripe" className="App left right yview abs" />
         <div className="vw vh noise abs border" onMouseMove={this.hoverColor} />
+        <div
+          className="top right abs my1 mx2 white o-4"
+          onClick={this.openAbout}
+        >
+          {this.showAbout(this.state.aboutToggle)}
+        </div>
         <div className="aic jcc f fw p1 yview">
-          <div className="gutter p2 fa ac o-4 white">
+          <div className="gutter px2 fa ac o-4 white">
+            <About open={this.state.aboutToggle} toggle={this.openAbout} />
             <Headline />
             <div className="mt2">
               <p className="h6 kern">RECENT PROJECTS</p>
             </div>
             <div className="mt1">
-              <a href="http://freud.fun" className="no-underwear">
+              <a
+                href="http://freud.fun"
+                className="no-underwear"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Fridge Freud
               </a>{' '}
               —
-              <a className="no-underwear" href="http://mmash.herokuapp.com/">
+              <a
+                className="no-underwear"
+                href="http://mmash.herokuapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Monster Mash
               </a>{' '}
               —
-              <a className="no-underwear" href="http://pianofriend.cool">
+              <a
+                className="no-underwear"
+                href="http://pianofriend.cool"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Piano Friend
               </a>{' '}
               —
-              <a className="no-underwear" href="http://beer.topset.co">
+              <a
+                className="no-underwear"
+                href="http://beer.topset.co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 WeWork Beer List
               </a>{' '}
               —
-              <a className="no-underwear" href="http://www.shreddit.cool">
+              <a
+                className="no-underwear"
+                href="http://www.shreddit.cool"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Shreddit
               </a>{' '}
               —
-              <a className="no-underwear" href="https://justadd.myshopify.com/">
+              <a
+                className="no-underwear"
+                href="https://justadd.myshopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Just Add Sauces
               </a>{' '}
               —
-              <a className="no-underwear" href="http://uchu.nyc/">
+              <a
+                className="no-underwear"
+                href="http://uchu.nyc/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Uchu
               </a>{' '}
               —
-              <a className="no-underwear" href="http://sushionjones.com/">
+              <a
+                className="no-underwear"
+                href="http://sushionjones.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Sushi on Jones
               </a>{' '}
               —
-              <a className="no-underwear" href="http://serhantteam.com/">
+              <a
+                className="no-underwear"
+                href="http://serhantteam.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {' '}
                 Serhant Team
-              </a>
-              ' '} —
+              </a>{' '}
+              —
               <a
                 className="no-underwear"
                 href="https://squamuglia.github.io/neteffect/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {' '}
                 Net Effective Rent
