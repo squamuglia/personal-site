@@ -5,7 +5,7 @@ class About extends Component {
     if (this.props.open) {
       return (
         <div
-          className="__about abs fill f aic jcc m1"
+          className="__about abs top left vw vh f aic jcc border p1 z10"
           onClick={this.props.toggle}
         >
           <div className="fa gutter ac">
@@ -16,7 +16,7 @@ class About extends Component {
               friendly things in React, Rails, WordPress & Shopify.
             </p>
             <p>
-              I like fun projects and people. If you'd like to collaborate,
+              I like fun projects and people. If you'd like to collaborate,{' '}
               <a href="mailto:maxsmouha@gmail.com">email me</a>, or just feel a
               sense of satisfaction from knowing you could contact me at any
               time.

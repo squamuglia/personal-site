@@ -45,13 +45,14 @@ class App extends Component {
       return 'About';
     }
   };
+
   render() {
     return (
       <React.Fragment>
         <div id="stripe" className="App left right yview abs" />
         <div className="vw vh noise abs border" onMouseMove={this.hoverColor} />
         <div
-          className="top right abs my1 mx2 white o-4"
+          className="top right abs my1 mx2 pt05 white o-4 z10"
           onClick={this.openAbout}
         >
           {this.showAbout(this.state.aboutToggle)}

@@ -2,19 +2,19 @@ import React from 'react';
 
 const headlines = [
   'who is afraid of horses.',
-  'who is a good bean.',
+  'who pod races.',
   `who isn't afraid to say we met on Tinder.`,
   'who so random.',
   'who finagles.',
   'who does the madison.',
   'who understands eggs.',
   "who loves the word 'externality'.",
-  'who knows a guy who knows a guy.',
+  'who knows a guy.',
   'who can even.'
 ];
 
 const nextHeadline = () => {
-  let i = 0;
+  let i = -1;
   setInterval(() => {
     i < headlines.length - 1 ? (i = i + 1) : (i = 0);
     document.getElementById('headline').innerHTML = headlines[i];

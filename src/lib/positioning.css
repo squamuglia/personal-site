@@ -10,8 +10,8 @@
 .x50 { width: 50% }
 .y { height: 100% }
 .fit { max-width:100% }
-.xview { width: 100vw }
-.yview { height: 100vh }
+.xview, .vw { width: 100vw }
+.yview, .vh { height: 100vh }
 
 .wa { width: auto }
 .mw-1 { max-width: 24rem }
