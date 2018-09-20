@@ -49,8 +49,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="stripe" className="App left right yview abs" />
-        <div className="vw vh noise abs border" onMouseMove={this.hoverColor} />
+        <div id="stripe" className="App vh vw fix" />
+        <div className="vh vw fix noise border" onMouseMove={this.hoverColor} />
         <div
           className="top right abs my1 mx2 pt05 white o-4 z10"
           onClick={this.openAbout}

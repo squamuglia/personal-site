@@ -31,6 +31,8 @@
   .mobile-button { position: fixed }
   .__headline { min-height: 24rem }
   .gutter { max-width: 60rem; margin:6rem auto 0 auto; }
+  .aic { align-items: normal }
+  .jcc { justify-content: normal }
 }
 
 @media (min-width: 40em) and (max-width: 52em){

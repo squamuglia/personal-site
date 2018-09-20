@@ -17,14 +17,6 @@ class Headline extends Component {
     currentHeadline: null
   };
 
-  // nextHeadline = () => {
-  //   let i = -1;
-  //   setInterval(() => {
-  //     i < this.state.headlines.length - 1 ? (i = i + 1) : (i = 0);
-  //     document.getElementById('headline').innerHTML = this.state.headlines[i];
-  //   }, 2000);
-  // };
-
   componentWillMount() {
     let i = -1;
     this.interval = setInterval(() => {
