@@ -4,17 +4,19 @@ class Fader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentHeadline: "who loads his own sites"
+			currentHeadline: this.props.content[
+				Math.random() * this.props.content.length - 1
+			]
 		};
 
 		this.headRef = React.createRef();
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		const t = this.props.time;
 		const d = this.props.delay;
 
-		setTimeout(() => {
+		this.timerA = setTimeout(() => {
 			this.headRef.current.classList = "fadeOut";
 		}, t - d);
 
@@ -28,15 +30,18 @@ class Fader extends Component {
 			});
 		}, t);
 
-		this.fader = setTimeout(() => {
-			setInterval(() => {
+		this.timerB = setTimeout(() => {
+			this.fader = setInterval(() => {
 				this.headRef.current.classList = "fadeOut";
 			}, t);
 		}, t - d);
 	}
 
 	componentWillUnmount() {
-		clearInterval(this.interval, this.fader);
+		clearInterval(this.interval);
+		clearInterval(this.fader);
+		clearTimeout(this.timerA);
+		clearTimeout(this.timerB);
 	}
 
 	render() {
