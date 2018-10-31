@@ -66,6 +66,9 @@
 /*Animation*/
 .hide { display: none }
 
+.slowFade {
+  animation: fadeIn 1.5s ease;
+}
 .fadeIn {
   animation: fadeIn .5s ease-in;
 }
