@@ -29,7 +29,7 @@ const links = {
 };
 
 const Home = () => {
-	const rando = r => r.sort(() => -1 + Math.round(Math.random()));
+	const rando = r => r.sort(() => Math.round(Math.random()) - 1);
 
 	return (
 		<div className="fadeIn">
