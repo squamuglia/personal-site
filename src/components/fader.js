@@ -4,25 +4,23 @@ class Fader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentHeadline: this.props.content[
-				Math.random() * this.props.content.length - 1
-			]
+			currentHeadline: null
 		};
 
-		this.headRef = React.createRef();
+		this.node = React.createRef();
 	}
 
 	componentDidMount() {
 		const t = this.props.time;
 		const d = this.props.delay;
 
-		this.timerA = setTimeout(() => {
-			this.headRef.current.classList = "fadeOut";
+		this.tA = setTimeout(() => {
+			this.node.current.classList = "fadeOut";
 		}, t - d);
 
 		let i = -1;
 		this.interval = setInterval(() => {
-			this.headRef.current.classList = "fadeIn";
+			this.node.current.classList = "fadeIn";
 			i < this.props.content.length - 1 ? (i = i + 1) : (i = 0);
 			this.setState({
 				...this.state,
@@ -30,9 +28,9 @@ class Fader extends Component {
 			});
 		}, t);
 
-		this.timerB = setTimeout(() => {
+		this.tB = setTimeout(() => {
 			this.fader = setInterval(() => {
-				this.headRef.current.classList = "fadeOut";
+				this.node.current.classList = "fadeOut";
 			}, t);
 		}, t - d);
 	}
@@ -40,13 +38,13 @@ class Fader extends Component {
 	componentWillUnmount() {
 		clearInterval(this.interval);
 		clearInterval(this.fader);
-		clearTimeout(this.timerA);
-		clearTimeout(this.timerB);
+		clearTimeout(this.tA);
+		clearTimeout(this.tB);
 	}
 
 	render() {
 		return (
-			<span ref={this.headRef} className="fadeIn">
+			<span ref={this.node} className="fadeIn">
 				{this.state.currentHeadline}
 			</span>
 		);

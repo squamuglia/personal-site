@@ -4,51 +4,31 @@ import Home from "./components/home";
 
 class App extends Component {
 	state = {
-		aboutToggle: false
+		toggle: false
 	};
 
 	hoverColor = e => {
-		let mouseX;
-		let mouseY;
+		const x = window.innerWidth;
+		const y = window.innerHeight;
+		const mX = e.clientX;
+		const mY = e.clientY;
 		const stripe = document.getElementById("stripe");
-		let x = window.innerWidth;
-		let y = window.innerHeight;
 
-		mouseX = e.clientX;
-		mouseY = e.clientY;
-		console.log("your mouse's x", mouseX / x, "your mouse's y", mouseY / y);
+		console.log("your mouse's x", mX / x, "your mouse's y", mY / y);
 
-		stripe.style.background = `linear-gradient(130deg, rgb(${(250 * mouseX) /
-			x},${(250 * mouseY) / y},200), rgb(${(250 * mouseY) / y},120,${(250 * x) /
-			mouseX})), linear-gradient(210deg, rgb(${(250 * mouseX) / x},${(250 *
-			mouseY) /
-			y},${(250 * mouseX) / x}), rgb(160,${(250 * mouseY) / y},${(250 *
-			mouseX) /
-			x})),
-  linear-gradient(330deg, rgb(80,${(250 * y) / mouseY},${(250 * mouseX) /
-			x}), rgb(100,${(250 * mouseY) / y},${(250 * mouseX) / x}))`;
+		stripe.style.background = `
+			linear-gradient(130deg, rgb(${(250 * mX) / x},${(250 * mY) /
+			y},200), rgb(${(250 * mY) / y},120,${(250 * x) / mX})), 
+
+			linear-gradient(210deg, rgb(${(250 * mX) / x},${(250 * mY) / y},${(250 * mX) /
+			x}), rgb(160,${(250 * mY) / y},${(250 * mX) / x})),
+
+			linear-gradient(330deg, rgb(80,${(250 * y) / mY},${(250 * mX) /
+			x}), rgb(100,${(250 * mY) / y},${(250 * mX) / x}))
+			`;
 	};
 
-	openAbout = () => {
-		this.setState({
-			aboutToggle: !this.state.aboutToggle
-		});
-	};
-
-	showAbout = show => {
-		if (show) {
-			return "X";
-		} else {
-			return "About";
-		}
-	};
-
-	renderPage = () => {
-		if (this.state.aboutToggle) {
-			return <About open={this.state.aboutToggle} toggle={this.openAbout} />;
-		}
-		return <Home />;
-	};
+	toggle = () => this.setState({ toggle: !this.state.toggle });
 
 	render() {
 		console.log("hi!");
@@ -58,12 +38,19 @@ class App extends Component {
 				<div className="vh vw fix noise border" onMouseMove={this.hoverColor} />
 				<div
 					className="top right abs my1 mx2 pt05 white o-4 z10"
-					onClick={this.openAbout}
+					onClick={this.toggle}
 				>
-					{this.showAbout(this.state.aboutToggle)}
+					{this.state.toggle ? "X" : "About"}
 				</div>
 				<div className="aic jcc f fw p1 yview">
-					<div className="gutter px2 fa ac o-4 white">{this.renderPage()}</div>
+					<div className="gutter px2 fa ac o-4 white">
+						<About
+							style={!this.state.toggle ? { display: "none" } : null}
+							open={this.state.toggle}
+							toggle={this.toggle}
+						/>
+						<Home style={this.state.toggle ? { display: "none" } : null} />
+					</div>
 				</div>
 			</div>
 		);
