@@ -3,9 +3,7 @@ import About from "./components/about";
 import Home from "./components/home";
 
 class App extends Component {
-	state = {
-		toggle: false
-	};
+	state = { toggleAbout: "none" };
 
 	hoverColor = e => {
 		const x = window.innerWidth;
@@ -14,7 +12,7 @@ class App extends Component {
 		const mY = e.clientY;
 		const stripe = document.getElementById("stripe");
 
-		console.log("your mouse's x", mX / x, "your mouse's y", mY / y);
+		// console.log("your mouse's x", mX / x, "your mouse's y", mY / y);
 
 		stripe.style.background = `
 			linear-gradient(130deg, rgb(${(250 * mX) / x},${(250 * mY) /
@@ -28,26 +26,34 @@ class App extends Component {
 			`;
 	};
 
-	toggle = () => this.setState({ toggle: !this.state.toggle });
+	// toggle = () => this.setState({ toggle: !this.state.toggle });
+
+	toggleAbout = () => {
+		if (this.state.toggleAbout === "fadeIn") {
+			this.setState({ toggleAbout: "fadeOut" });
+			return setTimeout(() => this.setState({ toggleAbout: "none" }), 500);
+		} else {
+			this.setState({ toggleAbout: "fadeIn" });
+		}
+	};
 
 	render() {
-		console.log("hi!");
+		console.log("hi!", this.state.toggleAbout);
 		return (
 			<div className="slowFade">
 				<div id="stripe" className="App vh vw fix" />
 				<div className="vh vw fix noise border" onMouseMove={this.hoverColor} />
 				<div
 					className="top right abs my1 mx2 pt05 white o-4 z10"
-					onClick={this.toggle}
+					onClick={this.toggleAbout}
 				>
-					{this.state.toggle ? "X" : "About"}
+					{this.state.toggleAbout === "none" ? "About" : "X"}
 				</div>
 				<div className="aic jcc f fw p1 yview">
 					<div className="gutter px2 fa ac o-4 white">
 						<About
-							style={!this.state.toggle ? { display: "none" } : null}
-							open={this.state.toggle}
-							toggle={this.toggle}
+							aboutClass={this.state.toggleAbout}
+							toggle={this.toggleAbout}
 						/>
 						<Home style={this.state.toggle ? { display: "none" } : null} />
 					</div>

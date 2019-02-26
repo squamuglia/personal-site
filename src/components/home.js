@@ -16,16 +16,13 @@ const headlines = [
 
 const links = {
 	"Fridge Freud": "http://freud.fun",
-	Serhant: "http://serhant.com",
-	"Monster Mash": "#",
-	"Piano Friend": "#",
-	"WeWork Beer List": "#",
-	Shreddit: "#",
-	"Just Add Sauces": "#",
-	Uchu: "#",
-	"Sushi on Jones": "#",
-	"Serhant Team": "#",
-	"Net Effective Rent": "#"
+	"Piano Friend": "http://pianofriend.cool/",
+	"WeWork Beer List": "http://beer.topset.co/",
+	Shreddit: "http://shreddit.cool",
+	"Just Add Sauces": "https://justadd.myshopify.com/",
+	Uchu: "http://uchu.nyc",
+	"Sushi on Jones": "http://sushionjones.com/",
+	"Net Effective Rent": "https://squamuglia.github.io/neteffect/"
 };
 
 const Home = () => {
