@@ -7,7 +7,6 @@ class About extends Component {
 	}
 
 	render() {
-		console.log(this.props.aboutClass);
 		return (
 			<div
 				className={

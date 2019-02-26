@@ -12,7 +12,7 @@ class App extends Component {
 		const mY = e.clientY;
 		const stripe = document.getElementById("stripe");
 
-		// console.log("your mouse's x", mX / x, "your mouse's y", mY / y);
+		console.log("mouse x", mX / x, "mouse y", mY / y);
 
 		stripe.style.background = `
 			linear-gradient(130deg, rgb(${(250 * mX) / x},${(250 * mY) /
@@ -26,8 +26,6 @@ class App extends Component {
 			`;
 	};
 
-	// toggle = () => this.setState({ toggle: !this.state.toggle });
-
 	toggleAbout = () => {
 		if (this.state.toggleAbout === "fadeIn") {
 			this.setState({ toggleAbout: "fadeOut" });
@@ -38,7 +36,6 @@ class App extends Component {
 	};
 
 	render() {
-		console.log("hi!", this.state.toggleAbout);
 		return (
 			<div className="slowFade">
 				<div id="stripe" className="App vh vw fix" />
