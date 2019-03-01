@@ -14,18 +14,17 @@ const headlines = [
 	"who can even."
 ];
 
-const links = {
-	"Fridge Freud": "http://freud.fun",
-	"Piano Friend": "http://pianofriend.cool/",
-	"WeWork Beer List": "http://beer.topset.co/",
-	Shreddit: "http://shreddit.cool",
-	"Just Add Sauces": "https://justadd.myshopify.com/",
-	Uchu: "http://uchu.nyc",
-	"Sushi on Jones": "http://sushionjones.com/",
-	"Net Effective Rent": "https://squamuglia.github.io/neteffect/"
-};
+const linksRender = links =>
+	links.map(link => (
+		<div className="col-25 px075 my1">
+			<a href={link.url} target="_blank" rel="noopener noreferrer">
+				<h5>{link.name}</h5>
+			</a>
+			<p className="mt05">{link.desc}</p>
+		</div>
+	));
 
-const Home = () => {
+export default () => {
 	const rando = r => r.sort(() => Math.round(Math.random()) - 1);
 
 	return (
@@ -37,25 +36,51 @@ const Home = () => {
 				</h1>
 			</div>
 
-			<div className="mt2">
+			<div className="my2">
 				<p className="h6 kern">RECENT PROJECTS</p>
 			</div>
-			<ul className="mt1">
-				{Object.keys(links).map(link => (
-					<li className="inline-block mx1">
-						<a href={links[link]} target="_blank" rel="noopener noreferrer">
-							{link}
-						</a>
-					</li>
-				))}
-			</ul>
+			<div className="f fw mt1">{linksRender(links)}</div>
 			<div className="x left ac mt1 mb2">
 				<a href="mailto:maxsmouha@gmail.com">email</a>{" "}
 				<a href="https://github.com/squamgulia">git</a>{" "}
-				<a href="https://medium.com/@maxsmouha/">medium</a>
+				{/* <a href="https://medium.com/@maxsmouha/">medium</a> */}
 			</div>
 		</div>
 	);
 };
 
-export default Home;
+const links = [
+	{
+		name: "TriBeCa Art Walk",
+		url: "https://www.tribecaarts.org",
+		desc: "react, mapbox"
+	},
+	{ name: "Fridge Freud", url: "http://freud.fun", desc: "react, node" },
+	{
+		name: "Piano Friend",
+		url: "http://pianofriend.cool/",
+		desc: "vanilla js"
+	},
+	{
+		name: "WeWork Beer List",
+		url: "http://beer.topset.co/",
+		desc: "react, rails"
+	},
+	{ name: "Shreddit", url: "http://shreddit.cool", desc: "rails mvc" },
+	{
+		name: "Just Add Sauces",
+		url: "https://justadd.myshopify.com/",
+		desc: "shopify"
+	},
+	{ name: "Uchu", url: "http://uchu.nyc", desc: "wordpress" },
+	{
+		name: "Sushi on Jones",
+		url: "http://sushionjones.com/",
+		desc: "wordpress"
+	},
+	{
+		name: "Net Effective Rent",
+		url: "https://squamuglia.github.io/neteffect/",
+		desc: "vanilla"
+	}
+];

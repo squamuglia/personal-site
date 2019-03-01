@@ -10,19 +10,18 @@ class App extends Component {
 		const y = window.innerHeight;
 		const mX = e.clientX;
 		const mY = e.clientY;
-		const stripe = document.getElementById("stripe");
 
 		console.log("mouse x", mX / x, "mouse y", mY / y);
 
-		stripe.style.background = `
-			linear-gradient(130deg, rgb(${(250 * mX) / x},${(250 * mY) /
-			y},200), rgb(${(250 * mY) / y},120,${(250 * x) / mX})), 
+		this.colorBg.style.background = `
+			linear-gradient(130deg, rgb(${(200 * mX) / x},${(200 * mY) /
+			y},200), rgb(${(200 * mY) / y},120,${(200 * x) / mX})), 
 
-			linear-gradient(210deg, rgb(${(250 * mX) / x},${(250 * mY) / y},${(250 * mX) /
-			x}), rgb(160,${(250 * mY) / y},${(250 * mX) / x})),
+			linear-gradient(210deg, rgb(${(200 * mX) / x},${(200 * mY) / y},${(200 * mX) /
+			x}), rgb(160,${(200 * mY) / y},${(200 * mX) / x})),
 
-			linear-gradient(330deg, rgb(80,${(250 * y) / mY},${(250 * mX) /
-			x}), rgb(100,${(250 * mY) / y},${(250 * mX) / x}))
+			linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
+			x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))
 			`;
 	};
 
@@ -37,9 +36,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="slowFade">
-				<div id="stripe" className="App vh vw fix" />
-				<div className="vh vw fix noise border" onMouseMove={this.hoverColor} />
+			<div className="slowFade" onMouseMove={this.hoverColor}>
+				<div
+					ref={colorBg => (this.colorBg = colorBg)}
+					className="App vh vw fix"
+				/>
+				<div className="vh vw fix noise border" />
 				<div
 					className="top right abs my1 mx2 pt05 white o-4 z10"
 					onClick={this.toggleAbout}

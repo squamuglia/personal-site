@@ -20,7 +20,7 @@ class About extends Component {
 					<h3>Hi, it's me.</h3>
 					<p>
 						I'm a full-stack design developer based in Brooklyn. I build
-						friendly things in React, Rails, WordPress {"&"} Shopify.
+						friendly things in React, Node, Rails, WordPress {"&"} Shopify.
 					</p>
 					<p>
 						I like fun projects and people. If you'd like to collaborate,{" "}

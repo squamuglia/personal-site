@@ -10,6 +10,7 @@
 @import './lib/lists.css';
 @import './lib/typography.css';
 @import './lib/z-index.css';
+@import './lib/columns.css';
 
 /* Containers */
   .gutter { max-width: 60rem; margin:0 auto; }
