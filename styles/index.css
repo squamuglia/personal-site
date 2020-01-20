@@ -1,0 +1,182 @@
+@import "./lib/reset.css";
+@import "./lib/borders.css";
+@import "./lib/display.css";
+@import "./lib/positioning.css";
+@import "./lib/flexbox.css";
+@import "./lib/align.css";
+@import "./lib/spacing.css";
+@import "./lib/buttons.css";
+@import "./lib/forms.css";
+@import "./lib/lists.css";
+@import "./lib/typography.css";
+@import "./lib/z-index.css";
+@import "./lib/columns.css";
+
+/* Containers */
+.gutter {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.noise {
+  background: url("/static/noise.png");
+  opacity: 0.7;
+}
+.__headline {
+  min-height: 15rem;
+}
+.__about {
+  background: blue;
+}
+.round {
+  border-radius: 50%;
+}
+.__me {
+  background: url("/static/me.jpg");
+  background-size: contain;
+  width: 8rem;
+  height: 8rem;
+}
+
+/* Breakpoints */
+@media (max-width: 30em) {
+  .xs-hide {
+    display: none !important;
+  }
+  h1,
+  .h1 {
+    font-size: 2.5em;
+  }
+  .mobile-button {
+    position: fixed;
+  }
+  .__headline {
+    min-height: 20rem;
+  }
+  .gutter {
+    max-width: 60rem;
+    margin: 6rem auto 0 auto;
+  }
+  .aic {
+    align-items: normal;
+  }
+  .jcc {
+    justify-content: normal;
+  }
+}
+
+@media (min-width: 40em) and (max-width: 52em) {
+  .sm-hide {
+    display: none !important;
+  }
+  .mobile-button {
+    position: fixed;
+  }
+}
+
+@media (min-width: 52em) and (max-width: 64em) {
+  .md-hide {
+    display: none !important;
+  }
+}
+
+@media (min-width: 64em) {
+  .lg-hide {
+    display: none !important;
+  }
+}
+
+/*Colors*/
+.bg-white {
+  background: #fff;
+}
+
+.bg-light {
+  background: #dfdfdf;
+}
+
+.white {
+  color: #fff;
+}
+
+.o-4 {
+  opacity: 0.4;
+}
+
+a:hover {
+  opacity: 0.5;
+  color: #000;
+  transition: 0.2s;
+}
+
+/*Animation*/
+.hide {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loopFade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loop-fade {
+  animation: loopFade 3s ease infinite;
+}
+
+.slowFade {
+  animation: fadeIn 1.5s ease;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-in;
+}
+
+#stripe {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 200vw 200vh;
+  animation: Gradient 8s ease infinite;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
