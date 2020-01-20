@@ -1,6 +1,12 @@
 import React from "react";
+import { NextPage } from "next";
 
-const About = ({ toggle, style }) => (
+interface Props {
+  toggle: () => void;
+  style: string;
+}
+
+const About: NextPage<Props> = ({ toggle, style }) => (
   <div
     className={"__about abs top left vw vh f aic jcc border p1 z10 " + style}
     onClick={toggle}

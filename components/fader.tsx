@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-// const rando = r => r.sort(() => Math.round(Math.random()) - 1);
+import { NextPage } from "next";
 
 let headlines = [
   "who is afraid of horses.",
@@ -15,7 +14,7 @@ let headlines = [
   "who can even."
 ].sort(() => Math.round(Math.random()) - 1);
 
-const Fader = () => {
+const Fader: NextPage = () => {
   let [headlineIdx, setHeadline] = useState(0);
 
   useEffect(() => {
