@@ -19,7 +19,7 @@ const About: NextPage<Props> = ({ toggle, style }) => (
         product. I build friendly things in React, Node, Shopify, {"&"} more.
       </p>
       <p>
-        I like fun projects and people, especially when they exploit suprirising
+        I like fun projects and people, especially when they exploit surprising
         sensory phenomena. My interests include VR, Video Chat, SMS and
         experiential design. If you'd like to collaborate,{" "}
         <a href="mailto:maxsmouha@gmail.com">email me</a>, or just feel a sense
