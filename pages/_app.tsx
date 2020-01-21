@@ -24,31 +24,30 @@ const App = ({ Component, pageProps }) => {
         linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
       x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`;
 
-    console.log("mouse x", mX / x, "mouse y", mY / y);
+    console.log("mouse x", mX / x);
+    console.log("mouse y", mY / y);
   };
 
   return (
-    <>
-      <div className="slowFade" onMouseMove={hoverColor}>
-        <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
-        <div className="vh vw fix noise border" />
+    <div onMouseMove={hoverColor}>
+      <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
+      <div className="vh vw fix noise border" />
 
-        <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
-          <span className="mr1">
-            <Link href="/index">Projects</Link>
-          </span>
-          <Link href="/about">About</Link>
-        </div>
+      <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
+        <span className="mr1">
+          <Link href="/">Projects</Link>
+        </span>
+        <Link href="/about">About</Link>
+      </div>
 
-        <div className="aic jcc f fw p1 yview">
-          <div className="container-m px2 fa ac o-4 white">
-            <PageTransition timeout={500} classNames="page-transition">
-              <Component {...pageProps} />
-            </PageTransition>
-          </div>
+      <div className="aic jcc f fw p1 yview">
+        <div className="container-m px2 fa ac o-4 white">
+          <PageTransition timeout={500} classNames="page-transition">
+            <Component {...pageProps} />
+          </PageTransition>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

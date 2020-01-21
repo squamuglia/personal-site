@@ -3,7 +3,7 @@ import Fader from "../components/fader";
 import { NextPage } from "next";
 
 const Home: NextPage = () => (
-  <div className="fadeIn">
+  <>
     <div className="__headline">
       <h1>
         Max Smouha is a developer <Fader />
@@ -29,7 +29,7 @@ const Home: NextPage = () => (
       <a href="mailto:maxsmouha@gmail.com">email</a>{" "}
       <a href="https://github.com/squamgulia">git</a>{" "}
     </div>
-  </div>
+  </>
 );
 
 export default Home;

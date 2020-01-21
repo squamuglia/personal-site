@@ -1,27 +1,6 @@
-/*Animation*/
-.hide {
-  display: none;
+.loop-fade {
+  animation: loopFade 3s ease infinite;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
 @keyframes loopFade {
   0% {
     opacity: 0;
@@ -37,28 +16,11 @@
   }
 }
 
-.loop-fade {
-  animation: loopFade 3s ease infinite;
-}
-
-.slowFade {
-  animation: fadeIn 1.5s ease;
-}
-
-.fadeIn {
-  animation: fadeIn 0.5s ease-in;
-}
-
-.fadeOut {
-  animation: fadeOut 0.5s ease-in;
-}
-
 #stripe {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 200vw 200vh;
   animation: Gradient 8s ease infinite;
 }
-
 @keyframes Gradient {
   0% {
     background-position: 0% 50%;
