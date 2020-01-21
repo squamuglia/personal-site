@@ -6,10 +6,8 @@ import "../styles/index.css";
 import { NextPage } from "next";
 
 const App: NextPage = () => {
+  let bgRef;
   const [fade, setFade] = useState<"fadeIn" | "fadeOut" | "none">("none");
-  const [backgroundColor, setColor] = useState<{ backgroundColor: string }>({
-    backgroundColor: "blue"
-  });
 
   const hoverColor = (e: MouseEvent) => {
     const x: number = window.innerWidth;
@@ -17,18 +15,18 @@ const App: NextPage = () => {
     const mX: number = e.clientX;
     const mY: number = e.clientY;
 
-    setColor({
-      backgroundColor: `linear-gradient(130deg, rgb(${(200 * mX) / x},${(200 *
-        mY) /
-        y},200), rgb(${(200 * mY) / y},120,${(200 * x) / mX})), 
-      linear-gradient(210deg, rgb(${(200 * mX) / x},${(200 * mY) / y},${(200 *
-        mX) /
-        x}), rgb(160,${(200 * mY) / y},${(200 * mX) / x})),
-        linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
-        x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`
-    });
+    if (!bgRef) {
+      return;
+    }
 
-    console.log(backgroundColor);
+    bgRef.style.background = `linear-gradient(130deg, rgb(${(200 * mX) /
+      x},${(200 * mY) / y},200), rgb(${(200 * mY) / y},120,${(200 * x) / mX})), 
+      linear-gradient(210deg, rgb(${(200 * mX) / x},${(200 * mY) / y},${(200 *
+      mX) /
+      x}), rgb(160,${(200 * mY) / y},${(200 * mX) / x})),
+        linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
+      x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`;
+
     // console.log("mouse x", mX / x, "mouse y", mY / y);
   };
 
@@ -67,7 +65,7 @@ const App: NextPage = () => {
       </Head>
 
       <div className="slowFade" onMouseMove={hoverColor}>
-        <div style={backgroundColor} className="App vh vw fix" />
+        <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
         <div className="vh vw fix noise border" />
 
         <div

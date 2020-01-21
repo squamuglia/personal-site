@@ -184,3 +184,7 @@ a:hover {
 .pointer {
   cursor: pointer;
 }
+
+.bg-blue {
+  background: blue;
+}
