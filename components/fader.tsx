@@ -15,9 +15,15 @@ let headlines = [
 ].sort(() => Math.round(Math.random()) - 1);
 
 const Fader: NextPage = () => {
+  let fadeRef;
   let [headlineIdx, setHeadline] = useState<number>(0);
 
   useEffect(() => {
+    if (fadeRef) {
+      //adding this style on component mount seems to fix syncing issue
+      fadeRef.classList = "loop-fade";
+    }
+
     const time = setInterval(() => {
       headlineIdx < headlines.length - 1
         ? setHeadline(headlineIdx => headlineIdx + 1)
@@ -27,7 +33,7 @@ const Fader: NextPage = () => {
     return () => clearInterval(time);
   }, []);
 
-  return <span className="loop-fade">{headlines[headlineIdx]}</span>;
+  return <span ref={node => (fadeRef = node)}>{headlines[headlineIdx]}</span>;
 };
 
 export default Fader;

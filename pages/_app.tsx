@@ -29,7 +29,7 @@ const App = ({ Component, pageProps }) => {
   };
 
   return (
-    <div onMouseMove={hoverColor}>
+    <div className="fade-in" onMouseMove={hoverColor}>
       <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
       <div className="vh vw fix noise border" />
 
