@@ -27,7 +27,7 @@ const App: NextPage = () => {
         linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
       x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`;
 
-    // console.log("mouse x", mX / x, "mouse y", mY / y);
+    console.log("mouse x", mX / x, "mouse y", mY / y);
   };
 
   const toggleHome = () => {
