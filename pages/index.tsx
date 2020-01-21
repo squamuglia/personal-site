@@ -40,49 +40,24 @@ const App: NextPage = () => {
   };
 
   return (
-    <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="theme-color" content="#000000" />
-        <meta
-          name="description"
-          content="I build friendly things in React, Node, WordPress &amp; Shopify"
-        />
-        <meta
-          name="keywords"
-          content="developer, web development, app development, node, javascript"
-        />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Nova+Cut|Space+Mono"
-          rel="stylesheet"
-        />
-        <title>Max Smouha - Developer, Friend</title>
-      </Head>
+    <div className="slowFade" onMouseMove={hoverColor}>
+      <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
+      <div className="vh vw fix noise border" />
 
-      <div className="slowFade" onMouseMove={hoverColor}>
-        <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
-        <div className="vh vw fix noise border" />
+      <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
+        <span className="mr1" onClick={toggleHome}>
+          Projects
+        </span>
+        <span onClick={toggleHome}>About</span>
+      </div>
 
-        <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
-          <span className="mr1" onClick={toggleHome}>
-            Projects
-          </span>
-          <span onClick={toggleHome}>About</span>
-        </div>
-
-        <div className="aic jcc f fw p1 yview">
-          <div className="container-m px2 fa ac o-4 white">
-            <About style={fade} toggle={toggleHome} />
-            <Home />
-          </div>
+      <div className="aic jcc f fw p1 yview">
+        <div className="container-m px2 fa ac o-4 white">
+          <About style={fade} toggle={toggleHome} />
+          <Home />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
