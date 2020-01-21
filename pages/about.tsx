@@ -1,16 +1,8 @@
 import React from "react";
 import { NextPage } from "next";
 
-interface Props {
-  toggle: () => void;
-  style: string;
-}
-
-const About: NextPage<Props> = ({ toggle, style }) => (
-  <div
-    className={"bg-blue abs top left vw vh f aic jcc border p1 z10 " + style}
-    onClick={toggle}
-  >
+const About: NextPage = () => (
+  <div className="bg-blue abs top left vw vh f aic jcc border p1 z10 ">
     <div className="fa container-sm ac">
       <div className="round mxa mb1 __me" />
       <h3>Hi, it's me.</h3>
