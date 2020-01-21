@@ -47,7 +47,7 @@ const links: Array<{
   { name: "Fridge Freud", url: "http://freud.fun", desc: "react, node" },
   {
     name: "Piano Friend",
-    url: "http://pianofriend.cool/",
+    url: "https://pianofriend.netlify.com/",
     desc: "vanilla js"
   },
   {
