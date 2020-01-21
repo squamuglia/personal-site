@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import About from "../components/about";
 import Home from "../components/home";
 import Head from "next/head";
@@ -12,7 +12,7 @@ const App: NextPage = () => {
     backgroundColor: "blue"
   });
 
-  const hoverColor = e => {
+  const hoverColor = (e: MouseEvent) => {
     const x: number = window.innerWidth;
     const y: number = window.innerHeight;
     const mX: number = e.clientX;

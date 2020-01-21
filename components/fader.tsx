@@ -15,7 +15,7 @@ let headlines = [
 ].sort(() => Math.round(Math.random()) - 1);
 
 const Fader: NextPage = () => {
-  let [headlineIdx, setHeadline] = useState(0);
+  let [headlineIdx, setHeadline] = useState<number>(0);
 
   useEffect(() => {
     const time = setInterval(() => {

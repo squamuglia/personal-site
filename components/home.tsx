@@ -46,34 +46,13 @@ const links: Array<{
   },
   { name: "Fridge Freud", url: "http://freud.fun", desc: "react, node" },
   {
-    name: "WeWork Beer List",
-    url: "https://wework.netlify.com/",
-    desc: "react, firestore"
-  },
-  {
     name: "Piano Friend",
     url: "http://pianofriend.cool/",
     desc: "vanilla js"
   },
   {
-    name: "Shreddit",
-    url: "https://shreddit-forums.herokuapp.com",
-    desc: "rails mvc"
-  },
-  {
-    name: "Just Add Sauces",
-    url: "https://justadd.myshopify.com/",
-    desc: "shopify"
-  },
-  { name: "Uchu", url: "http://uchu.nyc", desc: "wordpress" },
-  {
-    name: "Sushi on Jones",
-    url: "http://sushionjones.com/",
-    desc: "wordpress"
-  },
-  {
     name: "Net Effective Rent",
     url: "https://squamuglia.github.io/neteffect/",
-    desc: "vanilla"
+    desc: "vanilla js"
   }
 ];
