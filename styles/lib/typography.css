@@ -1,61 +1,87 @@
-html, body {
-  font-family: 'Space Mono', 'monospace';
+html,
+body {
+  font-family: "Space Mono", "monospace";
   font-size: 100%;
   line-height: 1.7;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nova Cut', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nova Cut", cursive;
   margin: 0;
 }
 .s1,
-h1, .h1 {
+h1,
+.h1 {
   font-size: 4em;
 }
-h1, .h1 {
+h1,
+.h1 {
   line-height: 1.2;
 }
+@media (max-width: 30em) {
+  h1,
+  .h1 {
+    font-size: 2.5em;
+  }
+}
 .s2,
-h2, .h2 {
+h2,
+.h2 {
   font-size: 3em;
 }
-h2, .h2 {
+h2,
+.h2 {
   line-height: 1.3;
 }
 .s3,
-h3, .h3 {
+h3,
+.h3 {
   font-size: 2em;
 }
-h3, .h3 {
+h3,
+.h3 {
   line-height: 1.5;
 }
 .s4,
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.5em;
 }
-h4, .h4 {
+h4,
+.h4 {
   line-height: 1.5;
 }
 .s5,
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1em;
 }
-h5, .h5 {
+h5,
+.h5 {
   line-height: 1.6;
 }
 .s6,
-h6, .h6 {
+h6,
+.h6 {
   font-size: 0.875em;
 }
-h6, .h6 {
+h6,
+.h6 {
   line-height: 1.6;
 }
 .s0,
-p, .p {
+p,
+.p {
   font-size: 1em;
 }
-p, .p {
+p,
+.p {
   line-height: 1.7;
 }
 p {
@@ -64,6 +90,12 @@ p {
 a {
   color: inherit;
 }
+a:hover {
+  opacity: 0.5;
+  color: #000;
+  transition: 0.2s;
+}
+
 hr {
   display: block;
   border: 0;
@@ -73,13 +105,16 @@ hr {
   background-color: currentColor;
   color: inherit;
 }
-small, .small {
+small,
+.small {
   font-size: 0.75em;
 }
-strong, .b {
+strong,
+.b {
   font-weight: bold;
 }
-em, .i {
+em,
+.i {
   font-style: italic;
 }
 .caps {
@@ -89,8 +124,14 @@ em, .i {
   text-decoration: none;
 }
 
-.kern { letter-spacing: 2px }
+.kern {
+  letter-spacing: 2px;
+}
 
-@media (max-width: 30em){
-  h1, .h1 { font-size: 2.5em }
+.__headline {
+  min-height: 15rem;
+}
+
+.pointer {
+  cursor: pointer;
 }

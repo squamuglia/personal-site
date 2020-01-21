@@ -68,15 +68,15 @@ const App: NextPage = () => {
         <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
         <div className="vh vw fix noise border" />
 
-        <div
-          className="top right abs my1 mx2 pt05 white o-4 z10 pointer"
-          onClick={toggleHome}
-        >
-          {fade === "none" ? "About" : "X"}
+        <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
+          <span className="mr1" onClick={toggleHome}>
+            Projects
+          </span>
+          <span onClick={toggleHome}>About</span>
         </div>
 
         <div className="aic jcc f fw p1 yview">
-          <div className="gutter px2 fa ac o-4 white">
+          <div className="container-m px2 fa ac o-4 white">
             <About style={fade} toggle={toggleHome} />
             <Home />
           </div>

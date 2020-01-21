@@ -1,0 +1,19 @@
+.bg-blue {
+  background: blue;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-light {
+  background: #dfdfdf;
+}
+
+.white {
+  color: #fff;
+}
+
+.o-4 {
+  opacity: 0.4;
+}
