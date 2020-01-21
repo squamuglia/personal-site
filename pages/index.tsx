@@ -7,7 +7,6 @@ import { NextPage } from "next";
 
 const App: NextPage = () => {
   const [fade, setFade] = useState<"fadeIn" | "fadeOut" | "none">("none");
-  const [displayHome, setDisplayHome] = useState<boolean>(true);
   const [backgroundColor, setColor] = useState<{ backgroundColor: string }>({
     backgroundColor: "blue"
   });
@@ -22,24 +21,23 @@ const App: NextPage = () => {
       backgroundColor: `linear-gradient(130deg, rgb(${(200 * mX) / x},${(200 *
         mY) /
         y},200), rgb(${(200 * mY) / y},120,${(200 * x) / mX})), 
-        linear-gradient(210deg, rgb(${(200 * mX) / x},${(200 * mY) / y},${(200 *
+      linear-gradient(210deg, rgb(${(200 * mX) / x},${(200 * mY) / y},${(200 *
         mX) /
         x}), rgb(160,${(200 * mY) / y},${(200 * mX) / x})),
-          linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
+        linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
         x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`
     });
 
-    console.log("mouse x", mX / x, "mouse y", mY / y);
+    console.log(backgroundColor);
+    // console.log("mouse x", mX / x, "mouse y", mY / y);
   };
 
   const toggleHome = () => {
     if (fade === "fadeIn") {
       setFade("fadeOut");
-      setDisplayHome(false);
       return setTimeout(() => setFade("none"), 500);
     } else {
       setFade("fadeIn");
-      setDisplayHome(true);
     }
   };
 
@@ -69,11 +67,11 @@ const App: NextPage = () => {
       </Head>
 
       <div className="slowFade" onMouseMove={hoverColor}>
-        <div style={{ ...backgroundColor }} className="App vh vw fix" />
+        <div style={backgroundColor} className="App vh vw fix" />
         <div className="vh vw fix noise border" />
 
         <div
-          className="top right abs my1 mx2 pt05 white o-4 z10"
+          className="top right abs my1 mx2 pt05 white o-4 z10 pointer"
           onClick={toggleHome}
         >
           {fade === "none" ? "About" : "X"}
@@ -81,11 +79,8 @@ const App: NextPage = () => {
 
         <div className="aic jcc f fw p1 yview">
           <div className="gutter px2 fa ac o-4 white">
-            {displayHome ? (
-              <Home />
-            ) : (
-              <About style={fade} toggle={toggleHome} />
-            )}
+            <About style={fade} toggle={toggleHome} />
+            <Home />
           </div>
         </div>
       </div>

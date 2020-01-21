@@ -18,7 +18,7 @@
   margin: 0 auto;
 }
 .noise {
-  background: url("/static/noise.png");
+  background: url("/noise.png");
   opacity: 0.7;
 }
 .__headline {
@@ -31,7 +31,7 @@
   border-radius: 50%;
 }
 .__me {
-  background: url("/static/me.jpg");
+  background: url("/me.jpg");
   background-size: contain;
   width: 8rem;
   height: 8rem;
@@ -179,4 +179,8 @@ a:hover {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.pointer {
+  cursor: pointer;
 }
