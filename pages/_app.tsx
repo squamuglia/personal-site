@@ -1,5 +1,6 @@
 import React, { MouseEvent } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { PageTransition } from "next-page-transitions";
 import "../styles/index.css";
 
@@ -30,14 +31,21 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <div className="fade-in" onMouseMove={hoverColor}>
+      <Head>
+        <title>Max Smouha - Developer, Friend</title>
+      </Head>
       <div ref={node => (bgRef = node)} className="App vh vw fix bg-blue" />
       <div className="vh vw fix noise border" />
 
       <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">
         <span className="mr1">
-          <Link href="/">Projects</Link>
+          <Link href="/">
+            <a>Projects</a>
+          </Link>
         </span>
-        <Link href="/about">About</Link>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
       </div>
 
       <div className="aic jcc f fw p1 yview">

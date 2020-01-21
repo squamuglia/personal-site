@@ -29,7 +29,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Nova+Cut|Space+Mono"
             rel="stylesheet"
           />
-          <title>Max Smouha - Developer, Friend</title>
         </Head>
         <body>
           <Main />
