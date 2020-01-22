@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 
-let headlines = [
+const headlines = [
   "who is afraid of horses.",
   "who pod races.",
   `who isn't afraid to say we met on Tinder.`,
@@ -12,7 +12,7 @@ let headlines = [
   "who loves the word 'externality'.",
   "who knows a guy.",
   "who can even."
-].sort(() => Math.round(Math.random()) - 1);
+].sort(() => Math.round(Math.random()));
 
 const Fader: NextPage = () => {
   let fadeRef;
@@ -25,15 +25,25 @@ const Fader: NextPage = () => {
     }
 
     const time = setInterval(() => {
-      headlineIdx < headlines.length - 1
-        ? setHeadline(headlineIdx => headlineIdx + 1)
-        : setHeadline(0);
+      headlineIdx === headlines.length - 1
+        ? setHeadline(0)
+        : setHeadline(headlineIdx++);
     }, 3000);
 
     return () => clearInterval(time);
   }, []);
 
-  return <span ref={node => (fadeRef = node)}>{headlines[headlineIdx]}</span>;
+  console.log(headlines);
+  return (
+    <span className="none" ref={node => (fadeRef = node)}>
+      {headlines[headlineIdx]}
+    </span>
+  );
 };
 
 export default Fader;
+
+// console.log("hi: ", headlineIdx);
+// console.log(headlineIdx === headlines.length);
+// console.log("update: ", headlineIdx + 1);
+// console.log("current: ", headlines[headlineIdx]);

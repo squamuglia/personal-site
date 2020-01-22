@@ -18,7 +18,7 @@ const About: NextPage = () => (
         where we make birth control affordable and accessible online.
       </p>
       <p>
-        I like fun projects and people, especially when they exploit surprising
+        I like working on fun projects, especially when they exploit surprising
         sensory phenomena. My interests include VR, Video Chat, SMS and
         experiential design.
       </p>
