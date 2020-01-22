@@ -2,11 +2,11 @@ import React from "react";
 import { NextPage } from "next";
 
 const About: NextPage = () => (
-  <div className="bg-blue abs top left vw vh f aic jcc border p1 z10">
-    <div className="fa container-sm">
+  <div className="abs top left x y f aic jcc p1 z10">
+    <div className="container-sm y">
       <div className="round mxa mb1 __me" />
       <h3 className="ac">Hi, it's me.</h3>
-      <div className="aj">
+      <div className="aj px2">
         <p>
           I'm a front-end developer based in Brooklyn with an eye for design and
           product. I build friendly things in React, Node, Shopify, {"&"} more.
