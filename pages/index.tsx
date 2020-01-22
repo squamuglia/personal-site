@@ -1,36 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import Fader from "../components/fader";
 import { NextPage } from "next";
 
-const Home: NextPage = () => (
-  <>
-    <div className="__headline">
-      <h1>
-        Max Smouha is a developer <Fader />
-      </h1>
-    </div>
+const Home: NextPage = () => {
+  const [showNotes, setShowNotes] = useState<boolean>(false);
 
-    <div className="my2">
-      <p className="h6 kern">RECENT PROJECTS</p>
-    </div>
+  return (
+    <>
+      <div className="__headline">
+        <h1>
+          Max Smouha is a developer <Fader />
+        </h1>
+      </div>
 
-    <div className="f fw mt1">
-      {links.map((link, i) => (
-        <div className="col-25 px075 my1" key={i}>
-          <a href={link.url} target="_blank" rel="noopener noreferrer">
-            <h5>{link.name}</h5>
-          </a>
-          <p className="mt05">{link.desc}</p>
+      <div className="my2">
+        <p className="h6 kern">
+          VAGUELY RECENT PROJECTS{" "}
+          <sup className="pointer" onClick={() => setShowNotes(!showNotes)}>
+            1
+          </sup>
+        </p>
+      </div>
+
+      <div className="f fw mt1">
+        {links.map((link, i) => (
+          <div className="col-25 px075 my1" key={i}>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <h5>{link.name}</h5>
+            </a>
+            <p className="mt05">{link.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="x left ac mt1 mb2">
+        <a href="mailto:maxsmouha@gmail.com">email</a>{" "}
+        <a href="https://github.com/squamgulia">git</a>{" "}
+      </div>
+
+      {showNotes && (
+        <div className="abs bottom left ml2 mb1 al">
+          <p>
+            1. Most of my current work is ongoing. This is more or less a
+            collection of early, extant work.
+          </p>
         </div>
-      ))}
-    </div>
-
-    <div className="x left ac mt1 mb2">
-      <a href="mailto:maxsmouha@gmail.com">email</a>{" "}
-      <a href="https://github.com/squamgulia">git</a>{" "}
-    </div>
-  </>
-);
+      )}
+    </>
+  );
+};
 
 export default Home;
 

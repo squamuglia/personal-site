@@ -8,6 +8,10 @@ const App = ({ Component, pageProps }) => {
   let bgRef;
 
   const hoverColor = (e: MouseEvent) => {
+    console.clear();
+    console.log(
+      "Hi, welcome. The background is determinded by your mouse position"
+    );
     const x: number = window.innerWidth;
     const y: number = window.innerHeight;
     const mX: number = e.clientX;
