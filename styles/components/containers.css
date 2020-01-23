@@ -8,7 +8,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 30em) {
+@media (max-width: 35rem) {
   .container-sm,
   .container-m {
     margin: 6rem auto;

@@ -1,8 +1,26 @@
-.col-25 {
-    max-width: 25%;
-    width: 100%;
+.col-20 {
+  max-width: 20%;
+  width: 100%;
+}
+@media (max-width: 60em) {
+  .col-20 {
+    max-width: 30%;
+  }
 }
 
-@media (max-width: 30em){
-    .col-25 { max-width: 100% }
+@media (max-width: 35em) {
+  .col-20 {
+    max-width: 100%;
+  }
+}
+
+.col-25 {
+  max-width: 25%;
+  width: 100%;
+}
+
+@media (max-width: 35em) {
+  .col-25 {
+    max-width: 100%;
+  }
 }

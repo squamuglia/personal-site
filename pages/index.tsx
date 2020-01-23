@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
       <div className="f fw mt1">
         {links.map((link, i) => (
-          <div className="col-25 px075 my1" key={i}>
+          <div className="col-20 px075 my1" key={i}>
             <a href={link.url} target="_blank" rel="noopener noreferrer">
               <h5>{link.name}</h5>
             </a>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         ))}
       </div>
 
-      <div className="x left ac mt1 mb2">
+      <div className="x left ac mt1 footer">
         <a href="mailto:maxsmouha@gmail.com">email</a>{" "}
         <a href="https://github.com/squamgulia">git</a>{" "}
       </div>
@@ -65,11 +65,16 @@ const links: Array<{
   desc: string;
 }> = [
   {
+    name: "Simple Health",
+    url: "https://www.simplehealth.com/birth-control",
+    desc: "react, gql"
+  },
+  { name: <s>Fridge Freud</s>, url: "/", desc: "returning soon, react, node" },
+  {
     name: "TriBeCa Art Walk",
     url: "https://www.tribecaarts.org",
     desc: "react, mapbox"
   },
-  { name: <s>Fridge Freud</s>, url: "/", desc: "returning soon, react, node" },
   {
     name: "Piano Friend",
     url: "https://pianofriend.netlify.com/",
