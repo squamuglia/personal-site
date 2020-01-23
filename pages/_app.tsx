@@ -8,14 +8,17 @@ const App = ({ Component, pageProps }) => {
   let bgRef;
 
   const hoverColor = (e: MouseEvent) => {
-    console.clear();
-    console.log(
-      "Hi, welcome. The background is determinded by your mouse position"
-    );
     const x: number = window.innerWidth;
     const y: number = window.innerHeight;
     const mX: number = e.clientX;
     const mY: number = e.clientY;
+
+    console.clear();
+    console.log(
+      "Hi, welcome. The background is determinded by your mouse position"
+    );
+    console.log("mouse x", mX / x);
+    console.log("mouse y", mY / y);
 
     if (!bgRef) {
       return;
@@ -28,9 +31,6 @@ const App = ({ Component, pageProps }) => {
       x}), rgb(160,${(200 * mY) / y},${(200 * mX) / x})),
         linear-gradient(330deg, rgb(80,${(200 * y) / mY},${(200 * mX) /
       x}), rgb(100,${(200 * mY) / y},${(200 * mX) / x}))`;
-
-    console.log("mouse x", mX / x);
-    console.log("mouse y", mY / y);
   };
 
   return (
@@ -38,7 +38,8 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>Max Smouha - Developer, Friend</title>
       </Head>
-      <div ref={node => (bgRef = node)} className="vh vw fix bg-blue" />
+
+      <div ref={node => (bgRef = node)} className="vh vw fix bg-default" />
       <div className="vh vw fix noise border" />
 
       <div className="top right abs my1 mx2 pt05 white o-4 z10 pointer">

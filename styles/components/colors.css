@@ -22,3 +22,13 @@
 .o-4 {
   opacity: 0.4;
 }
+
+.bg-default {
+  background: linear-gradient(130deg, rgb(183, 129, 200), rgb(129, 120, 219))
+      repeat scroll 0% 0%,
+    linear-gradient(210deg, rgb(183, 129, 183), rgb(160, 129, 183)) repeat
+      scroll 0% 0%,
+    rgba(0, 0, 0, 0)
+      linear-gradient(330deg, rgb(80, 255, 183), rgb(100, 129, 183)) repeat
+      scroll 0% 0%;
+}

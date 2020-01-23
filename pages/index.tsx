@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import Fader from "../components/fader";
 import { NextPage } from "next";
 
 const Home: NextPage = () => {
   const [showNotes, setShowNotes] = useState<boolean>(false);
+  const [mousePosition, setMousePosition] = useState<{
+    left: number;
+    top: number;
+  }>({ left: 0, top: 0 });
+
+  const trackPosition = (e: MouseEvent) =>
+    setMousePosition({ left: e.clientX, top: e.clientY });
 
   return (
     <>
@@ -13,14 +20,16 @@ const Home: NextPage = () => {
         </h1>
       </div>
 
-      <div className="my2">
-        <p className="h6 kern">
-          VAGUELY RECENT PROJECTS{" "}
-          <sup className="pointer" onClick={() => setShowNotes(!showNotes)}>
-            1
-          </sup>
-        </p>
-      </div>
+      <h6 className="h6 kern my2 mxa pointer">
+        VAGUELY RECENT PROJECTS{" "}
+        <sup
+          onMouseMove={trackPosition}
+          onMouseOver={() => setShowNotes(true)}
+          onMouseOut={() => setShowNotes(false)}
+        >
+          1
+        </sup>
+      </h6>
 
       <div className="f fw mt1">
         {links.map((link, i) => (
@@ -39,11 +48,9 @@ const Home: NextPage = () => {
       </div>
 
       {showNotes && (
-        <div className="abs bottom left ml2 mb1 al">
-          <p>
-            1. Most of my current work is ongoing. This is more or less a
-            collection of early, extant work.
-          </p>
+        <div style={mousePosition} className="abs al p1 tooltip">
+          Most of my current projects are ongoing. This is more or less a
+          collection of early, extant work.
         </div>
       )}
     </>
@@ -53,7 +60,7 @@ const Home: NextPage = () => {
 export default Home;
 
 const links: Array<{
-  name: string;
+  name: any;
   url: string;
   desc: string;
 }> = [
@@ -62,7 +69,7 @@ const links: Array<{
     url: "https://www.tribecaarts.org",
     desc: "react, mapbox"
   },
-  { name: "Fridge Freud", url: "http://freud.fun", desc: "react, node" },
+  { name: <s>Fridge Freud</s>, url: "", desc: "react, node, returning soon" },
   {
     name: "Piano Friend",
     url: "https://pianofriend.netlify.com/",

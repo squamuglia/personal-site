@@ -8,11 +8,14 @@ body {
 }
 h1,
 h2,
-h3,
+h3 {
+  font-family: "Nova Cut", cursive;
+  margin: 0;
+}
 h4,
 h5,
 h6 {
-  font-family: "Nova Cut", cursive;
+  font-family: "Space Mono", "monospace";
   margin: 0;
 }
 .s1,
