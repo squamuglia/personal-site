@@ -66,7 +66,7 @@ const links: Array<{
 }> = [
   {
     name: "Simple Health",
-    url: "https://www.simplehealth.com/birth-control",
+    url: "https://www.simplehealth.com/birth-control/get-birth-control-online",
     desc: "react, gql"
   },
   { name: <s>Fridge Freud</s>, url: "/", desc: "returning soon, react, node" },
