@@ -69,7 +69,7 @@ const links: Array<{
     url: "https://www.tribecaarts.org",
     desc: "react, mapbox"
   },
-  { name: <s>Fridge Freud</s>, url: "", desc: "react, node, returning soon" },
+  { name: <s>Fridge Freud</s>, url: "/", desc: "returning soon, react, node" },
   {
     name: "Piano Friend",
     url: "https://pianofriend.netlify.com/",
