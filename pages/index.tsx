@@ -46,14 +46,18 @@ const Home: NextPage = () => {
 				<a href="mailto:maxsmouha@gmail.com" className="mr2">
 					email
 				</a>
-				<a href="https://github.com/squamgulia" target="_blank" rel="no-opener">
+				<a
+					href="https://github.com/squamgulia"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					git
 				</a>
 			</div>
 
 			{showNotes && (
 				<div style={mousePosition} className="abs al p1 tooltip">
-					A collection of early, extant work.
+					A collection of extant work.
 				</div>
 			)}
 		</>
@@ -73,6 +77,12 @@ const links: Array<{
 		desc: 'react, gql'
 	},
 	{
+		name: 'Recreo',
+		url: 'https://recreosanmiguel.com/',
+		desc: 'shopify'
+	},
+
+	{
 		name: 'Fridge Freud',
 		url: 'https://freud.fun',
 		desc: 'react, node'
@@ -81,11 +91,6 @@ const links: Array<{
 		name: 'TriBeCa Art Walk',
 		url: 'https://www.tribecaarts.org',
 		desc: 'react, mapbox'
-	},
-	{
-		name: 'Piano Friend',
-		url: 'https://pianofriend.netlify.com/',
-		desc: 'vanilla js'
 	},
 	{
 		name: 'Net Effective Rent',
