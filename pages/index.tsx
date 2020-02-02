@@ -42,9 +42,13 @@ const Home: NextPage = () => {
 				))}
 			</div>
 
-			<div className="x left ac mt1 footer">
-				<a href="mailto:maxsmouha@gmail.com">email</a>{' '}
-				<a href="https://github.com/squamgulia">git</a>{' '}
+			<div className="x ac mt2">
+				<a href="mailto:maxsmouha@gmail.com" className="mr2">
+					email
+				</a>
+				<a href="https://github.com/squamgulia" target="_blank" rel="no-opener">
+					git
+				</a>
 			</div>
 
 			{showNotes && (
