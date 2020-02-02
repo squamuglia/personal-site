@@ -31,9 +31,9 @@ const Home: NextPage = () => {
 				</sup>
 			</h6>
 
-			<div className="f fw mt1">
+			<div className="f fw mt1 jcc">
 				{links.map((link, i) => (
-					<div className="col-20 px075 my1" key={i}>
+					<div className="col-33 px075 my1" key={i}>
 						<a href={link.url} target="_blank" rel="noopener noreferrer">
 							<h5>{link.name}</h5>
 						</a>
@@ -49,8 +49,7 @@ const Home: NextPage = () => {
 
 			{showNotes && (
 				<div style={mousePosition} className="abs al p1 tooltip">
-					Most of my current projects are ongoing. This is more or less a
-					collection of early, extant work.
+					This is more or less a collection of early, extant work.
 				</div>
 			)}
 		</>

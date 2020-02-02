@@ -17,6 +17,7 @@
 @import "./components/colors.css";
 @import "./components/containers.css";
 @import "./components/home.css";
+@import "./components/links.css";
 
 .round {
   border-radius: 50%;

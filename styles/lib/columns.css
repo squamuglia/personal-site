@@ -1,15 +1,15 @@
-.col-20 {
-  max-width: 20%;
+.col-33 {
+  max-width: calc(100% / 3);
   width: 100%;
 }
 @media (max-width: 60em) {
-  .col-20 {
-    max-width: 30%;
+  .col-33 {
+    max-width: calc(100% / 3);
   }
 }
 
 @media (max-width: 35em) {
-  .col-20 {
+  .col-33 {
     max-width: 100%;
   }
 }
