@@ -77,7 +77,7 @@ const links: Array<{
 		desc: 'react, gql'
 	},
 	{
-		name: 'Recreo',
+		name: 'Recreo San Miguel',
 		url: 'https://recreosanmiguel.com/',
 		desc: 'shopify'
 	},
