@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 
 			{showNotes && (
 				<div style={mousePosition} className="abs al p1 tooltip">
-					This is more or less a collection of early, extant work.
+					A collection of early, extant work.
 				</div>
 			)}
 		</>
