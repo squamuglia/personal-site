@@ -1,17 +1,8 @@
-import React, { useState, MouseEvent } from "react";
+import React, { useState, MouseEvent, useEffect } from "react";
 import Fader from "../components/fader";
 import { NextPage } from "next";
 
 const Home: NextPage = () => {
-  const [showNotes, setShowNotes] = useState<boolean>(false);
-  const [mousePosition, setMousePosition] = useState<{
-    left: number;
-    top: number;
-  }>({ left: 0, top: 0 });
-
-  const trackPosition = (e: MouseEvent) =>
-    setMousePosition({ left: e.clientX, top: e.clientY });
-
   return (
     <>
       <div className="__headline">
@@ -20,16 +11,7 @@ const Home: NextPage = () => {
         </h1>
       </div>
 
-      <h6 className="h6 kern my2 mxa pointer">
-        VAGUELY RECENT PROJECTS{" "}
-        <sup
-          onMouseMove={trackPosition}
-          onMouseOver={() => setShowNotes(true)}
-          onMouseOut={() => setShowNotes(false)}
-        >
-          1
-        </sup>
-      </h6>
+      <h6 className="h6 kern my2 mxa ">RECENT &amp; NOT SO RECENT PROJECTS</h6>
 
       <div className="f fw mt1 jcc">
         {links.map((link, i) => (
@@ -54,12 +36,6 @@ const Home: NextPage = () => {
           git
         </a>
       </div>
-
-      {showNotes && (
-        <div style={mousePosition} className="abs al p1 tooltip">
-          A collection of extant work.
-        </div>
-      )}
     </>
   );
 };
