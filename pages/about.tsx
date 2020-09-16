@@ -8,8 +8,8 @@ const About: NextPage = () => (
 			<h3 className="ac">Hi, it's me.</h3>
 			<div className="aj px2">
 				<p>
-					I'm a front-end developer based in Brooklyn with an eye for design and
-					product. I build friendly things in React, Node, Shopify, {'&'} more.
+					I'm a front-end developer based in Brooklyn who loves design and cool
+					products. I build friendly things in React, Node, Shopify, {'&'} more.
 				</p>
 				<p>
 					I currently work at{' '}
@@ -23,14 +23,15 @@ const About: NextPage = () => (
 					where we make birth control affordable and accessible online.
 				</p>
 				<p>
-					I like working on fun projects, especially when they exploit
+					I like working on fun projects, especially when they explore
 					surprising sensory phenomena. My interests include VR, Video Chat, SMS
 					and experiential design.
 				</p>
 				<p>
 					If you'd like to collaborate,{' '}
-					<a href="mailto:maxsmouha@gmail.com">email me</a>, or just feel a
-					sense of satisfaction from knowing you could contact me at any time.
+					<a href="mailto:maxsmouha@gmail.com">email me</a>, or just use that
+					link to get the sense that I'm super open to chatting about all kinds
+					of stuff.
 				</p>
 				<p>This site was built with Next, for fun!</p>
 			</div>
