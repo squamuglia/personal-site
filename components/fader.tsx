@@ -14,15 +14,14 @@ const headlines = [
 	'who can even.',
 ].sort(() => Math.round(Math.random()));
 
-let fadeRef;
-
 const Fader: NextPage = () => {
+	const fadeRef = useRef(null);
 	const [headlineIdx, setHeadline] = useState<number>(0);
 
 	useEffect(() => {
 		// adding this style on component mount fixes syncing issue
 		if (fadeRef) {
-			fadeRef.classList = 'loop-fade';
+			fadeRef.current.classList = 'loop-fade';
 		}
 
 		/* setInterval has a closed scope and doesn't have access to the state, 
@@ -42,7 +41,7 @@ const Fader: NextPage = () => {
 	}, []);
 
 	return (
-		<span className="none" ref={(node) => (fadeRef = node)}>
+		<span className="none" ref={fadeRef}>
 			{headlines[headlineIdx]}
 		</span>
 	);
