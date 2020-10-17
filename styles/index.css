@@ -1,46 +1,47 @@
-@import "./lib/reset.css";
-@import "./lib/borders.css";
-@import "./lib/display.css";
-@import "./lib/positioning.css";
-@import "./lib/flexbox.css";
-@import "./lib/align.css";
-@import "./lib/spacing.css";
-@import "./lib/buttons.css";
-@import "./lib/forms.css";
-@import "./lib/lists.css";
-@import "./lib/typography.css";
-@import "./lib/z-index.css";
-@import "./lib/columns.css";
+@import './lib/reset.css';
+@import './lib/borders.css';
+@import './lib/display.css';
+@import './lib/positioning.css';
+@import './lib/flexbox.css';
+@import './lib/align.css';
+@import './lib/spacing.css';
+@import './lib/buttons.css';
+@import './lib/forms.css';
+@import './lib/lists.css';
+@import './lib/typography.css';
+@import './lib/z-index.css';
+@import './lib/columns.css';
 
-@import "./components/animations.css";
-@import "./components/about.css";
-@import "./components/colors.css";
-@import "./components/containers.css";
-@import "./components/home.css";
-@import "./components/links.css";
+@import './components/animations.css';
+@import './components/about.css';
+@import './components/colors.css';
+@import './components/containers.css';
+@import './components/home.css';
+@import './components/links.css';
+@import './components/nav.css';
 
 .round {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 /* Breakpoints */
 @media (max-width: 30em) {
-  .mobile-button {
-    position: fixed;
-  }
-  .__headline {
-    min-height: 20rem;
-  }
-  .aic {
-    align-items: normal;
-  }
-  .jcc {
-    justify-content: normal;
-  }
+	.mobile-button {
+		position: fixed;
+	}
+	.__headline {
+		min-height: 20rem;
+	}
+	.aic {
+		align-items: normal;
+	}
+	.jcc {
+		justify-content: normal;
+	}
 }
 
 @media (min-width: 40em) and (max-width: 52em) {
-  .mobile-button {
-    position: fixed;
-  }
+	.mobile-button {
+		position: fixed;
+	}
 }
