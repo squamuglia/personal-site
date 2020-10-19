@@ -24,7 +24,7 @@ const Fader: NextPage = () => {
 		fadeRef.current.classList = 'loop fade-in';
 
 		const timeout = setTimeout(() => {
-			setHeadline(headlineIdx === headlines.length ? 0 : headlineIdx + 1);
+			setHeadline(headlineIdx === headlines.length - 1 ? 0 : headlineIdx + 1);
 		}, 3000);
 
 		const fadeIn = setTimeout(() => {
