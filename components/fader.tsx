@@ -1,53 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { NextPage } from "next";
+import React, { useState, useEffect, useRef } from 'react';
+import { NextPage } from 'next';
 
 const headlines = [
-  "who is afraid of horses.",
-  "who pod races.",
-  "who isn't afraid to say we met on Tinder.",
-  "who so random.",
-  "who finagles.",
-  "who does the madison.",
-  "who understands eggs.",
-  "who loves the word 'externality'.",
-  "who knows a guy.",
-  "who can even."
-];
+	'who is afraid of horses.',
+	'who pod races.',
+	"who isn't afraid to say we met on Tinder.",
+	'who so random.',
+	'who finagles.',
+	'who does the madison.',
+	'who understands eggs.',
+	"who loves the word 'externality'.",
+	'who knows a guy.',
+	'who can even.',
+].sort(() => Math.round(Math.random()));
 
 const Fader: NextPage = () => {
-  let fadeRef;
-  const [headlineIdx, setHeadline] = useState<number>(0);
+	const fadeRef = useRef(null);
+	const [headlineIdx, setHeadline] = useState<number>(0);
 
-  useEffect(() => {
-    // adding this style on component mount fixes syncing issue
-    if (fadeRef) {
-      fadeRef.classList = "loop-fade";
-    }
+	useEffect(() => {
+		if (!fadeRef) return;
 
-    // randomize headlines on component mount
-    headlines.sort(() => Math.round(Math.random()));
+		fadeRef.current.classList = 'loop fade-in';
 
-    /* setInterval has a closed scope and doesn't have access to the state, 
-    hence `let i`, but we still need to update state to refresh the headline 
-    setting the state right here also prevents a funny bug where the first headline repeats twice */
-    let i = headlineIdx;
-    setHeadline(i++);
+		const timeout = setTimeout(() => {
+			setHeadline(headlineIdx === headlines.length - 1 ? 0 : headlineIdx + 1);
+		}, 3000);
 
-    const time = setInterval(() => {
-      if (i === headlines.length) {
-        i = 0;
-      }
-      setHeadline(i++);
-    }, 3000);
+		const fadeIn = setTimeout(() => {
+			fadeRef.current.classList = 'loop';
+		}, 1000);
 
-    return () => clearInterval(time);
-  }, []);
+		const fadeOut = setTimeout(() => {
+			fadeRef.current.classList = 'loop fade-out';
+		}, 2000);
 
-  return (
-    <span className="none" ref={node => (fadeRef = node)}>
-      {headlines[headlineIdx]}
-    </span>
-  );
+		return () => {
+			clearTimeout(timeout);
+			clearTimeout(fadeIn);
+			clearTimeout(fadeOut);
+		};
+	}, [headlineIdx, setHeadline, fadeRef]);
+
+	return (
+		<span className="none" ref={fadeRef}>
+			{headlines[headlineIdx]}
+		</span>
+	);
 };
 
 export default Fader;
