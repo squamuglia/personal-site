@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { NextPage } from 'next';
 import { PageTransition } from 'next-page-transitions';
 import '../styles/index.css';
+import { useRouter } from 'next/router';
 
 interface Props {
 	Component: NextPage;
@@ -15,8 +16,10 @@ const App = ({ Component, pageProps }: Props) => {
 		console.log('Hi, welcome.');
 	}, []);
 
+	const router = useRouter();
+
 	return (
-		<div>
+		<>
 			<Head>
 				<title>Max Smouha - Developer, Friend</title>
 			</Head>
@@ -40,11 +43,11 @@ const App = ({ Component, pageProps }: Props) => {
 			<div className="aic jcc f fw p1 yview">
 				<div className="container-m fa o-4">
 					<PageTransition timeout={500} classNames="page-transition">
-						<Component {...pageProps} />
+						<Component {...pageProps} key={router.route} />
 					</PageTransition>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -19,8 +19,8 @@ const Home: NextPage = () => {
 						<a href={link.url} target="_blank" rel="noopener noreferrer">
 							<h5>{link.name}</h5>
 						</a>
+						<p className="my05">{link.desc}</p>
 						<p className="mt05">{link.stack}</p>
-						<p className="mt05">{link.desc}</p>
 					</div>
 				))}
 			</div>
@@ -33,37 +33,37 @@ export default Home;
 const links: Array<{
 	name: string;
 	url: string;
-	stack: string;
 	desc: string;
+	stack: string;
 }> = [
 	{
 		name: 'Simple Health',
 		url: 'https://www.simplehealth.com/birth-control/get-birth-control-online',
-		stack: 'react, express, apollo, mysql',
 		desc: '',
+		stack: 'react, flow, express, apollo, mysql',
 	},
 	{
 		name: 'Pipsqk',
 		url: 'https://pipsqk.co',
-		stack: 'nextjs, react, mysql, twilio, serverless',
-		desc: '',
-	},
-	{
-		name: 'Fridge Freud',
-		url: 'https://freud.fun',
-		stack: 'react, node',
-		desc: '',
+		desc: `Coming soon. Pipsqk let's users subscribe to paid text feeds from content creators.`,
+		stack: 'nextjs, typescript, mysql, twilio, serverless',
 	},
 	{
 		name: 'TriBeCa Art Walk',
 		url: 'https://www.tribecaarts.org',
-		stack: 'nextjs, mapbox',
 		desc: '',
+		stack: 'nextjs, typescript, mapbox',
+	},
+	{
+		name: 'Fridge Freud',
+		url: 'https://freud.fun',
+		desc: `My first react app. Build a psychological profile through and receive restaurant recommendations from Yelp`,
+		stack: 'react, node',
 	},
 	{
 		name: 'Net Effective Rent',
 		url: 'https://squamuglia.github.io/neteffect/',
-		stack: 'vanilla js',
 		desc: '',
+		stack: 'vanilla js',
 	},
 ];

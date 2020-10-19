@@ -19,26 +19,28 @@ const Fader: NextPage = () => {
 	const [headlineIdx, setHeadline] = useState<number>(0);
 
 	useEffect(() => {
-		// adding this style on component mount fixes syncing issue
-		if (fadeRef) {
-			fadeRef.current.classList = 'loop-fade';
-		}
+		if (!fadeRef) return;
 
-		/* setInterval has a closed scope and doesn't have access to the state, 
-    hence `let i`, but we still need to update state to refresh the headline 
-    setting the state right here also prevents a funny bug where the first headline repeats twice */
-		let i = headlineIdx;
-		setHeadline(i++);
+		fadeRef.current.classList = 'loop fade-in';
 
-		const time = setInterval(() => {
-			if (i === headlines.length) {
-				i = 0;
-			}
-			setHeadline(i++);
+		const timeout = setTimeout(() => {
+			setHeadline(headlineIdx === headlines.length ? 0 : headlineIdx + 1);
 		}, 3000);
 
-		return () => clearInterval(time);
-	}, []);
+		const fadeIn = setTimeout(() => {
+			fadeRef.current.classList = 'loop';
+		}, 1000);
+
+		const fadeOut = setTimeout(() => {
+			fadeRef.current.classList = 'loop fade-out';
+		}, 2000);
+
+		return () => {
+			clearTimeout(timeout);
+			clearTimeout(fadeIn);
+			clearTimeout(fadeOut);
+		};
+	}, [headlineIdx, setHeadline, fadeRef]);
 
 	return (
 		<span className="none" ref={fadeRef}>

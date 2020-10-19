@@ -1,61 +1,67 @@
 .fade-in {
-  animation: fadeIn 2s ease;
+	animation: fadeIn 2s ease;
 }
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-.loop-fade {
-  animation: loopFade 3s ease infinite;
+.loop.fade-in {
+	animation: loopFadeIn 1s ease-in;
 }
-@keyframes loopFade {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.loop.fade-out {
+	animation: loopFadeOut 1s ease-out;
+}
+
+@keyframes loopFadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes loopFadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 #stripe {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 200vw 200vh;
-  animation: Gradient 8s ease infinite;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200vw 200vh;
+	animation: Gradient 8s ease infinite;
 }
 @keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .page-transition-enter {
-  opacity: 0;
+	opacity: 0;
 }
 .page-transition-enter-active {
-  opacity: 1;
-  transition: opacity 500ms;
+	opacity: 1;
+	transition: opacity 500ms;
 }
 .page-transition-exit {
-  opacity: 1;
+	opacity: 1;
 }
 .page-transition-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
+	opacity: 0;
+	transition: opacity 500ms;
 }
