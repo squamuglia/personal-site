@@ -48,6 +48,11 @@ const links: Array<{
 	desc: string;
 }> = [
 	{
+		name: 'Pipsqk',
+		url: 'https://pipsqk.co',
+		desc: 'nextjs, twilio, mysql',
+	},
+	{
 		name: 'Simple Health',
 		url: 'https://www.simplehealth.com/birth-control/get-birth-control-online',
 		desc: 'react, gql',
