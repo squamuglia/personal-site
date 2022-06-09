@@ -6,6 +6,7 @@ const About: NextPage = () => (
     <div className="container-sm">
       <div className="round mxa mb1 __me" />
       <h3 className="ac">Hi, it's me.</h3>
+
       <div className="aj px2">
         <p>
           I'm a front-end developer based in Brooklyn who loves design and cool
