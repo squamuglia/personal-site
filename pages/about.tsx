@@ -10,7 +10,7 @@ const About: NextPage = () => (
       <div className="aj px2">
         <p>
           I'm a front-end developer based in Brooklyn who loves design and cool
-          products. I build friendly things in React, Node, Shopify, {'&'} more.
+          products. I build friendly things in React, Node, Shopify, &amp; more.
         </p>
       </div>
     </div>
