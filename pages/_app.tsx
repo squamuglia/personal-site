@@ -13,11 +13,12 @@ const App = ({ Component, pageProps }: Props) => {
   return (
     <>
       <Head>
-        <title>Max Smouha - Developer, Friend</title>
+        <title>Max Smouha</title>
         <meta
           name="description"
-          content="I build friendly things in React, Node, WordPress &amp; Shopify"
+          content="Max Smouha builds software &amp; businesses."
         />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
       </Head>
