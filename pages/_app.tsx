@@ -1,5 +1,4 @@
 import React from 'react';
-import NavLink from '../components/navlink';
 import Head from 'next/head';
 import { NextPage } from 'next';
 import '../styles/index.css';
