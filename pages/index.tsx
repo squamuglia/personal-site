@@ -1,75 +1,87 @@
-import React, { useState, MouseEvent, useEffect } from 'react';
-import Fader from '../components/fader';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <>
-      <div className="__headline">
-        <h1>
-          Max Smouha is a developer <Fader />
-        </h1>
-      </div>
+    <div
+      className="min-h-screen p-8 relative text-white"
+      style={{ background: 'blue' }}
+    >
+      <h1 className="text-3xl mb-4">Max Smouha</h1>
+      <div>
+        <p className="mb-2">
+          Welcome. There's not much here currently because we're{' '}
+          <span className="whitespace-nowrap">
+            <img
+              src="/digger.gif"
+              alt="Under Construction"
+              className="inline-block h-8 mx-1"
+            />
+            under construction{' '}
+            <img
+              src="/digger.gif"
+              alt="Under Construction"
+              className="inline-block h-8 ml-1"
+            />
+          </span>
+          .
+        </p>
 
-      <h6 className="h6 kern my2 mxa ">RECENT &amp; NOT SO RECENT PROJECTS</h6>
+        <p className="mb-2 text-lg">Quick facts:</p>
 
-      <div className="f fw mt1 jcc">
-        {links.map((link, i) => (
-          <div className="col-33 px075 my1" key={i}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              <h5>{link.name}</h5>
+        <ul className="list-disc ml-4">
+          <li className="mb-2">Software engineer & entrepreneur</li>
+          <li className="mb-2">Based in NYC</li>
+          <li className="mb-2">
+            <a
+              href="https://brex.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ex-Brex
             </a>
-            <p className="mt05">{link.desc}</p>
-          </div>
-        ))}
+          </li>
+          <li className="mb-2">Previously health, fin, and adtech</li>
+          <li className="mb-2">
+            Currently building{' '}
+            <a
+              href="https://maypleglobal.com"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mayple Global
+              <img
+                src="/earth.gif"
+                alt="earth"
+                className="inline-block h-6 mx-2"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
-
-      <div className="x ac mt2">
-        <a href="mailto:maxsmouha@gmail.com" className="mr2">
+      <div className="flex gap-2 align-center mt-8 absolute bottom-8">
+        <a href="mailto:maxsmouha@gmail.com" className="underline">
           email
         </a>
         <a
-          href="https://github.com/squamgulia"
+          href="https://www.linkedin.com/in/max-smouha/"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          social
+        </a>
+        <a
+          href="https://github.com/squamuglia"
+          className="underline"
           target="_blank"
           rel="noopener noreferrer"
         >
           git
         </a>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Home;
-
-const links: Array<{
-  name: string;
-  url: string;
-  desc: string;
-}> = [
-  {
-    name: 'Pipsqk',
-    url: 'https://pipsqk.co',
-    desc: 'nextjs, twilio, mysql',
-  },
-  {
-    name: 'Simple Health',
-    url: 'https://www.simplehealth.com/birth-control/get-birth-control-online',
-    desc: 'react, gql',
-  },
-  {
-    name: 'Fridge Freud',
-    url: 'https://freud.fun',
-    desc: 'react, node',
-  },
-  {
-    name: 'TriBeCa Art Walk',
-    url: 'https://www.tribecaarts.org',
-    desc: 'nextjs, mapbox',
-  },
-  {
-    name: 'Net Effective Rent',
-    url: 'https://squamuglia.github.io/neteffect/',
-    desc: 'vanilla js',
-  },
-];
