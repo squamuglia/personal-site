@@ -2,10 +2,7 @@ import { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div
-      className="min-h-screen p-8 relative text-white"
-      style={{ background: 'blue' }}
-    >
+    <div className="min-h-screen p-8 relative text-white">
       <h1 className="text-3xl mb-4">Max Smouha</h1>
       <div>
         <p className="mb-2">

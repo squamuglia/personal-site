@@ -6,3 +6,7 @@
   font-family: 'Times New Roman', Times, serif;
   cursor: url('/nat1058.cur'), auto;
 }
+
+html {
+  background-color: blue;
+}
