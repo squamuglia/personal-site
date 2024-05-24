@@ -26,20 +26,9 @@ const Home: NextPage = () => {
         <p className="mb-2 text-lg">Quick facts:</p>
 
         <ul className="list-disc ml-4">
-          <li className="mb-2">Software engineer & entrepreneur</li>
-          <li className="mb-2">Based in NYC</li>
+          <li className="mb-2">Software leader & entrepreneur</li>
           <li className="mb-2">
-            <a
-              href="https://brex.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ex-Brex
-            </a>
-          </li>
-          <li className="mb-2">Previously health, fin, and adtech</li>
-          <li className="mb-2">
-            Currently building{' '}
+            Currently building a tech-enabled global supply chain called{' '}
             <a
               href="https://maypleglobal.com"
               className="underline"
@@ -52,6 +41,17 @@ const Home: NextPage = () => {
                 alt="earth"
                 className="inline-block h-6 mx-2"
               />
+            </a>
+          </li>
+          <li className="mb-2">Based in NYC</li>
+          <li className="mb-2">Previously health, fin, and adtech</li>
+          <li className="mb-2">
+            <a
+              href="https://brex.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ex-Brex
             </a>
           </li>
         </ul>
